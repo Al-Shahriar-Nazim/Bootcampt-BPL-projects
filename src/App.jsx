@@ -9,24 +9,29 @@ const playersFetch = async () => {
   const res = await fetch("/players.json");
   return res.json();
 };
+const playerPromised = playersFetch();
 
 function App() {
+  const [availavleBalance, setAvailableBalences] = useState(6000001);
   const [toggle, setToogle] = useState(true);
 
-  const playerPromised = playersFetch();
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar availavleBalance={availavleBalance}></Navbar>
 
       <div className="max-w-[1200px] mx-auto flex justify-between items-center">
         <h1 className="text-2xl font-bold">Available Players</h1>
         <div className="font-bold">
-          <button onClick={()=>setToogle(true)} 
-          className={`px-4 py-3 border-1 border-gray-400 border-r-0 rounded-l-2xl ${toggle===true?"bg-[#E7FE29]":""}`}>
+          <button
+            onClick={() => setToogle(true)}
+            className={`px-4 py-3 border-1 border-gray-400 border-r-0 rounded-l-2xl ${toggle === true ? "bg-[#E7FE29]" : ""}`}
+          >
             Available
           </button>
-          <button onClick={()=>setToogle(false)}
-           className={`px-4 py-3 border-1 border-gray-400 border-l-0 rounded-r-2xl ${toggle===false?"bg-[#E7FE29]":""}`}>
+          <button
+            onClick={() => setToogle(false)}
+            className={`px-4 py-3 border-1 border-gray-400 border-l-0 rounded-r-2xl ${toggle === false ? "bg-[#E7FE29]" : ""}`}
+          >
             Selected <span>(0)</span>
           </button>
         </div>
@@ -38,7 +43,11 @@ function App() {
             <span className="loading loading-spinner text-neutral"></span>
           }
         >
-          <Availavle playerPromised={playerPromised}></Availavle>
+          <Availavle
+            availavleBalance={availavleBalance}
+            setAvailableBalences={setAvailableBalences}
+            playerPromised={playerPromised}
+          ></Availavle>
         </Suspense>
       ) : (
         <Selected></Selected>

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import userImg from "../../assets/user1.png";
 import reportImg from "../../assets/report1.png";
 
-const Player = ({ player }) => {
-    const [selected,setSelected] = useState(false)
+const Player = ({ player, setAvailableBalences, availavleBalance }) => {
+  const [selected, setSelected] = useState(false);
   // console.log(player)
   const {
     player_img,
@@ -51,9 +51,19 @@ const Player = ({ player }) => {
           <div className="card-actions mt-4 flex items-center justify-between">
             <h3 className="font-bold">Prices : ${prices}</h3>
             <button
-            disabled={selected}
-            onClick={()=>setSelected(true)}
-             className="btn btn-primary">{selected===true?"Selected":"Choose Player"}</button>
+              disabled={selected}
+              onClick={() => {
+                if (availavleBalance < prices) {
+                  alert("not enogh coin");
+                  return;
+                }
+                (setSelected(true),
+                  setAvailableBalences(availavleBalance - prices));
+              }}
+              className="btn btn-primary"
+            >
+              {selected === true ? "Selected" : "Choose Player"}
+            </button>
           </div>
         </div>
       </div>
