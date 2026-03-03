@@ -1,0 +1,122 @@
+[
+  {
+    "player-img": "https://example.com/players/shakib-al-hasan.jpg",
+    "player-name": "Shakib Al Hasan",
+    "player-country": "Bangladesh",
+    "playing-role": "All-Rounder",
+    "rating": 9.8,
+    "bating-style": "Left-hand Bat",
+    "bowling-style": "Slow Left-arm Orthodox",
+    "prices": "$200,000"
+  },
+  {
+    "player-img": "https://example.com/players/tamim-iqbal.jpg",
+    "player-name": "Tamim Iqbal",
+    "player-country": "Bangladesh",
+    "playing-role": "Batsman",
+    "rating": 9.2,
+    "bating-style": "Left-hand Bat",
+    "bowling-style": "None",
+    "prices": "$150,000"
+  },
+  {
+    "player-img": "https://example.com/players/andre-russell.jpg",
+    "player-name": "Andre Russell",
+    "player-country": "West Indies",
+    "playing-role": "All-Rounder",
+    "rating": 9.7,
+    "bating-style": "Right-hand Bat",
+    "bowling-style": "Right-arm Fast",
+    "prices": "$220,000"
+  },
+  {
+    "player-img": "https://example.com/players/faf-du-plessis.jpg",
+    "player-name": "Faf du Plessis",
+    "player-country": "South Africa",
+    "playing-role": "Batsman",
+    "rating": 9.1,
+    "bating-style": "Right-hand Bat",
+    "bowling-style": "Right-arm Legbreak",
+    "prices": "$180,000"
+  },
+  {
+    "player-img": "https://example.com/players/mustafizur-rahman.jpg",
+    "player-name": "Mustafizur Rahman",
+    "player-country": "Bangladesh",
+    "playing-role": "Bowler",
+    "rating": 9.0,
+    "bating-style": "Left-hand Bat",
+    "bowling-style": "Left-arm Fast-Medium",
+    "prices": "$140,000"
+  },
+  {
+    "player-img": "https://example.com/players/sunil-narine.jpg",
+    "player-name": "Sunil Narine",
+    "player-country": "West Indies",
+    "playing-role": "All-Rounder",
+    "rating": 9.3,
+    "bating-style": "Left-hand Bat",
+    "bowling-style": "Right-arm Offbreak",
+    "prices": "$210,000"
+  },
+  {
+    "player-img": "https://example.com/players/liton-das.jpg",
+    "player-name": "Liton Das",
+    "player-country": "Bangladesh",
+    "playing-role": "Wicketkeeper-Batsman",
+    "rating": 8.9,
+    "bating-style": "Right-hand Bat",
+    "bowling-style": "None",
+    "prices": "$130,000"
+  },
+  {
+    "player-img": "https://example.com/players/mahmudullah.jpg",
+    "player-name": "Mahmudullah Riyad",
+    "player-country": "Bangladesh",
+    "playing-role": "All-Rounder",
+    "rating": 8.8,
+    "bating-style": "Right-hand Bat",
+    "bowling-style": "Right-arm Offbreak",
+    "prices": "$120,000"
+  },
+  {
+    "player-img": "https://example.com/players/rashid-khan.jpg",
+    "player-name": "Rashid Khan",
+    "player-country": "Afghanistan",
+    "playing-role": "Bowler",
+    "rating": 9.6,
+    "bating-style": "Right-hand Bat",
+    "bowling-style": "Right-arm Legbreak",
+    "prices": "$230,000"
+  },
+  {
+    "player-img": "https://example.com/players/david-miller.jpg",
+    "player-name": "David Miller",
+    "player-country": "South Africa",
+    "playing-role": "Batsman",
+    "rating": 9.0,
+    "bating-style": "Left-hand Bat",
+    "bowling-style": "Right-arm Offbreak",
+    "prices": "$175,000"
+  },
+  {
+    "player-img": "https://example.com/players/alex-hales.jpg",
+    "player-name": "Alex Hales",
+    "player-country": "England",
+    "playing-role": "Batsman",
+    "rating": 8.7,
+    "bating-style": "Right-hand Bat",
+    "bowling-style": "Right-arm Medium",
+    "prices": "$160,000"
+  },
+  {
+    "player-img": "https://example.com/players/taskin-ahmed.jpg",
+    "player-name": "Taskin Ahmed",
+    "player-country": "Bangladesh",
+    "playing-role": "Bowler",
+    "rating": 8.9,
+    "bating-style": "Right-hand Bat",
+    "bowling-style": "Right-arm Fast",
+    "prices": "$125,000"
+  }
+]
