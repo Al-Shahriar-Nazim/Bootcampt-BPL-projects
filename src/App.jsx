@@ -12,15 +12,24 @@ const playersFetch = async () => {
 const playerPromised = playersFetch();
 
 function App() {
-  const [availavleBalance, setAvailableBalences] = useState(6000001);
+  const [availavleBalance, setAvailableBalences] = useState(600000000000);
   const [toggle, setToogle] = useState(true);
+  const [selectedPlayers,setSelectedPlayers] = useState([])
+  // console.log(selectedPlayers)
+  const removePlayers = (p)=>{
+    // console.log(p)
+    const filterData = selectedPlayers.filter(play => play.player_name !== p.player_name)
+    // console.log(filterData)
+    setSelectedPlayers(filterData)
+    setAvailableBalences(availavleBalance+p.prices)
+  }
 
   return (
     <>
       <Navbar availavleBalance={availavleBalance}></Navbar>
 
       <div className="max-w-[1200px] mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Available Players</h1>
+        <h1 className="text-2xl font-bold">{toggle===true?"Available Players":`Selected Players (${selectedPlayers.length}/6)`}</h1>
         <div className="font-bold">
           <button
             onClick={() => setToogle(true)}
@@ -32,7 +41,7 @@ function App() {
             onClick={() => setToogle(false)}
             className={`px-4 py-3 border-1 border-gray-400 border-l-0 rounded-r-2xl ${toggle === false ? "bg-[#E7FE29]" : ""}`}
           >
-            Selected <span>(0)</span>
+            Selected <span>({selectedPlayers.length})</span>
           </button>
         </div>
       </div>
@@ -44,13 +53,15 @@ function App() {
           }
         >
           <Availavle
+          selectedPlayers={selectedPlayers}
+          setSelectedPlayers={setSelectedPlayers}
             availavleBalance={availavleBalance}
             setAvailableBalences={setAvailableBalences}
             playerPromised={playerPromised}
           ></Availavle>
         </Suspense>
       ) : (
-        <Selected></Selected>
+        <Selected removePlayers={removePlayers} selectedPlayers={selectedPlayers}></Selected>
       )}
 
       {/* <Selected></Selected> */}

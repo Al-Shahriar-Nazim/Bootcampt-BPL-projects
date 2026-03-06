@@ -1,14 +1,16 @@
 import React, { use } from "react";
 import Player from "../Player/Player";
 
-const Availavle = ({ playerPromised, setAvailableBalences,availavleBalance }) => {
+const Availavle = ({ playerPromised, setAvailableBalences,availavleBalance,selectedPlayers,setSelectedPlayers }) => {
   const playersData = use(playerPromised);
-  console.log(playersData);
+  // console.log(playersData);
   return (
     <div className="max-w-[1200px] mx-auto mt-5">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {playersData.map((player) => (
           <Player
+          selectedPlayers={selectedPlayers}
+          setSelectedPlayers={setSelectedPlayers}
           availavleBalance={availavleBalance}
             setAvailableBalences={setAvailableBalences}
             key={player.index}

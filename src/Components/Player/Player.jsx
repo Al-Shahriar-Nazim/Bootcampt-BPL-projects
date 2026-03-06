@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import userImg from "../../assets/user1.png";
 import reportImg from "../../assets/report1.png";
 
-const Player = ({ player, setAvailableBalences, availavleBalance }) => {
+const Player = ({ player, setAvailableBalences, availavleBalance,selectedPlayers,setSelectedPlayers}) => {
   const [selected, setSelected] = useState(false);
   // console.log(player)
   const {
@@ -15,6 +15,14 @@ const Player = ({ player, setAvailableBalences, availavleBalance }) => {
     bowling_style,
     prices,
   } = player;
+  const handleSelected = (playerData) => {
+    if (availavleBalance < prices) {
+      alert("not enogh coin");
+      return;
+    }
+    (setSelected(true), setAvailableBalences(availavleBalance - prices));
+    setSelectedPlayers([...selectedPlayers,playerData])
+  };
   return (
     <div>
       <div className="card bg-base-100 w-full shadow-2xl p-4">
@@ -52,14 +60,7 @@ const Player = ({ player, setAvailableBalences, availavleBalance }) => {
             <h3 className="font-bold">Prices : ${prices}</h3>
             <button
               disabled={selected}
-              onClick={() => {
-                if (availavleBalance < prices) {
-                  alert("not enogh coin");
-                  return;
-                }
-                (setSelected(true),
-                  setAvailableBalences(availavleBalance - prices));
-              }}
+              onClick={() => {handleSelected(player)}}
               className="btn btn-primary"
             >
               {selected === true ? "Selected" : "Choose Player"}
