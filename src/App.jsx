@@ -3,6 +3,7 @@ import "./App.css";
 import Availavle from "./Components/Availavle/Availavle";
 import Navbar from "./Components/Navbar/Navbar";
 import Selected from "./Components/Selected/Selected";
+  import { ToastContainer} from 'react-toastify';
 
 // const playerPromised = fetch("/players.json").then((res) => res.json());
 const playersFetch = async () => {
@@ -12,7 +13,7 @@ const playersFetch = async () => {
 const playerPromised = playersFetch();
 
 function App() {
-  const [availavleBalance, setAvailableBalences] = useState(600000000000);
+  const [availavleBalance, setAvailableBalences] = useState(6000000);
   const [toggle, setToogle] = useState(true);
   const [selectedPlayers,setSelectedPlayers] = useState([])
   // console.log(selectedPlayers)
@@ -61,10 +62,11 @@ function App() {
           ></Availavle>
         </Suspense>
       ) : (
-        <Selected removePlayers={removePlayers} selectedPlayers={selectedPlayers}></Selected>
+        <Selected setToogle={setToogle} removePlayers={removePlayers} selectedPlayers={selectedPlayers}></Selected>
       )}
 
       {/* <Selected></Selected> */}
+        <ToastContainer />
     </>
   );
 }

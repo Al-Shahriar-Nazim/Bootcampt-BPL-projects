@@ -24,7 +24,9 @@ removePlayers(player)
             Remove
         </button>
       </div>
+    
     </div>
+  
   );
 };
 
